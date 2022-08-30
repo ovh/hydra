@@ -379,7 +379,6 @@ func (m *RegistryBase) ScopeStrategy() fosite.ScopeStrategy {
 }
 
 func (m *RegistryBase) newKeyStrategy(key string) (s jwk.JWTStrategy) {
-
 	if err := jwk.EnsureAsymmetricKeypairExists(context.Background(), m.r, "RS256", key); err != nil {
 		var netError net.Error
 		if errors.As(err, &netError) {
@@ -507,6 +506,8 @@ func (m *RegistryBase) AccessRequestHooks() []oauth2.AccessRequestHook {
 	if m.arhs == nil {
 		m.arhs = []oauth2.AccessRequestHook{
 			oauth2.RefreshTokenHook(m.C),
+			oauth2.AuthorizationCodeHook(m.C),
+			oauth2.ClientCredentialsHook(m.C),
 		}
 	}
 	return m.arhs

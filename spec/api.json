@@ -919,6 +919,80 @@
         "title": "RefreshTokenHookResponse is the response body received from the refresh token hook.",
         "type": "object"
       },
+      "authorizationCodeHookRequest": {
+        "properties": {
+          "client_id": {
+            "description": "ClientID is the identifier of the OAuth 2.0 client.",
+            "type": "string"
+          },
+          "granted_audience": {
+            "description": "GrantedAudience is the list of audiences granted to the OAuth 2.0 client.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "granted_scopes": {
+            "description": "GrantedScopes is the list of scopes granted to the OAuth 2.0 client.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "subject": {
+            "description": "Subject is the identifier of the authenticated end-user.",
+            "type": "string"
+          }
+        },
+        "title": "AuthorizationCodeHookRequest is the request body sent to the refresh token hook.",
+        "type": "object"
+      },
+      "authorizationCodeHookResponse": {
+        "properties": {
+          "session": {
+            "$ref": "#/components/schemas/consentRequestSession"
+          }
+        },
+        "title": "AuthorizationCodeHookResponse is the response body received from the refresh token hook.",
+        "type": "object"
+      },
+      "clientCredentialsHookRequest": {
+        "properties": {
+          "client_id": {
+            "description": "ClientID is the identifier of the OAuth 2.0 client.",
+            "type": "string"
+          },
+          "granted_audience": {
+            "description": "GrantedAudience is the list of audiences granted to the OAuth 2.0 client.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "granted_scopes": {
+            "description": "GrantedScopes is the list of scopes granted to the OAuth 2.0 client.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "subject": {
+            "description": "Subject is the identifier of the authenticated end-user.",
+            "type": "string"
+          }
+        },
+        "title": "ClientCredentialsHookRequest is the request body sent to the refresh token hook.",
+        "type": "object"
+      },
+      "clientCredentialsHookResponse": {
+        "properties": {
+          "session": {
+            "$ref": "#/components/schemas/consentRequestSession"
+          }
+        },
+        "title": "ClientCredentialsHookResponse is the response body received from the refresh token hook.",
+        "type": "object"
+      },
       "rejectRequest": {
         "properties": {
           "error": {

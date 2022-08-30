@@ -948,9 +948,19 @@
           "type": "string",
           "description": "Sets the refresh token hook endpoint. If set it will be called during token refresh to receive updated token claims.",
           "format": "uri",
-          "examples": [
-            "https://my-example.app/token-refresh-hook"
-          ]
+          "examples": ["https://my-example.app/token-refresh-hook"]
+        },
+        "authorization_code_hook": {
+          "type": "string",
+          "description": "Sets the authorization code hook endpoint. If set it will be called during token refresh to receive updated token claims.",
+          "format": "uri",
+          "examples": ["https://my-example.app/token-authorization-code-hook"]
+        },
+        "client_credentials_hook": {
+          "type": "string",
+          "description": "Sets the client credentials hook endpoint. If set it will be called during token refresh to receive updated token claims.",
+          "format": "uri",
+          "examples": ["https://my-example.app/token-client-credentials-hook"]
         }
       }
     },
